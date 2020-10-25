@@ -11,3 +11,15 @@ def post_list(request):
 def home(request):
     return render(request,'blog/index.html', {})
 
+
+def github_api(request):
+    # We can also combine Django with APIs. This code does an API request, and
+    # then renders the HTML template with the response, every time we visit
+    # this view.
+    response = requests.get('https://api.github.com/users/camibrennan/repos')
+    repos = response.json()
+    context = {
+        'github_repos': repos,
+    }
+    return render(request, 'blog/github_api.html', context)
+

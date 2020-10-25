@@ -34,16 +34,16 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
-
 <body>
-<section id="hero" class="d-flex flex-column align-items-center justify-content-center">
-            <h1>Blog!</h1>
-            <h2></h2>
-            <a href="#about" class="btn-get-started scrollto"><i class="icofont-simple-down"></i></a>
-          </section>
-        <div>
-              <!-- ======= Header ======= -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column align-items-center justify-content-center">
+    <h1>Git Hub Repos!</h1>
+    <h2></h2>
+    <a href="#about" class="btn-get-started scrollto"><i class="icofont-simple-down"></i></a>
+  </section><!-- End Hero -->
+
+  <!-- ======= Header ======= -->
   <header id="header">
     <div class="container d-flex align-items-center">
 
@@ -58,7 +58,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/#about">About</a></li>
           <li><a href="/#resume">Resume</a></li>
-          <li class="active"><a href="/blog/">Blog!</a></li>
+          <li><a href="/blog/">Blog!</a></li>
           <li><a href="/#contact">Contact</a></li>
 
         </ul>
@@ -67,20 +67,13 @@
     </div>
   </header><!-- End Header -->
 
+  <main id="main">
 
-            <h1><a href="/">Blog</a></h1>
-        </div>
-        
-        {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-        {% endfor %}
-    </body>
-
-
+  <ol>
+  {% for repo in github_repos %}
+      <li>{{ repo.name }}</li>
+  {% endfor %}
+</body>
 
 
 
